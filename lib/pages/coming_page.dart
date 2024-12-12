@@ -7,7 +7,7 @@ class ComingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text("Coming Soon...Escort service"),
+        child: Text("Coming Soon...Escort service !!!"),
       ),
     );
   }
