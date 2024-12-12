@@ -18,9 +18,15 @@ jobs:
       - name: Set up Flutter 3.5.4
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.5.4'  # Use Flutter version 3.5.4
+          flutter-version: '3.5.4'  # Specify Flutter version 3.5.4
 
-      # Step 3: Deploy to Firebase Hosting
+      # Step 3: Run Flutter commands
+      - name: Install dependencies and build web
+        run: |
+          flutter pub get
+          flutter build web
+
+      # Step 4: Deploy to Firebase Hosting
       - name: Deploy to Firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
