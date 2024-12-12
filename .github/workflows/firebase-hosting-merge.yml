@@ -2,23 +2,39 @@
 # https://github.com/firebase/firebase-tools
 
 name: Deploy to Firebase Hosting on merge
+
+# Trigger the workflow on push to the main branch
 on:
   push:
     branches:
-      - main  # Use main branch instead of y
+      - main  # Monitor the main branch for changes
+
 jobs:
   build_and_deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Use the latest Ubuntu environment for this job
+
     steps:
-      - uses: actions/checkout@v4
+      # Step 1: Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: Set up Flutter environment
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: 'stable'  # Latest stable version of Flutter
-      - run: flutter pub get && flutter build web  # Flutter build commands
-      - uses: FirebaseExtended/action-hosting-deploy@v0
+          flutter-version: 'stable'  # Set Flutter version (latest stable)
+
+      # Step 3: Install dependencies and build Flutter Web
+      - name: Install dependencies and build Flutter Web
+        run: |
+          flutter pub get       # Install dependencies
+          flutter build web     # Build Flutter web
+
+      # Step 4: Deploy to Firebase Hosting
+      - name: Deploy to Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ESCORTSERVICE_D2F11 }}
-          channelId: live
-          projectId: escortservice-d2f11
+          repoToken: ${{ secrets.GITHUB_TOKEN }}  # GitHub token for authorization
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ESCORTSERVICE_D2F11 }}  # Firebase service account secret
+          channelId: live  # Deploy to live channel
+          projectId: escortservice-d2f11  # Firebase project ID
