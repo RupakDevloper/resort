@@ -1,0 +1,47 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "escortservice-d2f11",
+          "appId": "1:837795914268:android:c808cfc5c5eac9a8b435d9",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "escortservice-d2f11",
+          "configurations": {
+            "android": "1:837795914268:android:c808cfc5c5eac9a8b435d9",
+            "ios": "1:837795914268:ios:575672ccda497e63b435d9",
+            "macos": "1:837795914268:ios:575672ccda497e63b435d9",
+            "web": "1:837795914268:web:64301ff4aedce69fb435d9",
+            "windows": "1:837795914268:web:511c1e87e35709beb435d9"
+          }
+        }
+      }
+    }
+  },
+  "emulators": {
+    "dataconnect": {
+      "dataDir": "dataconnect/.dataconnect/pgliteData"
+    }
+  },
+  "dataconnect": {
+    "source": "dataconnect"
+  },
+  "hosting": {
+    "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

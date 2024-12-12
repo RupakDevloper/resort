@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "837795914268",
+    "project_id": "escortservice-d2f11",
+    "storage_bucket": "escortservice-d2f11.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:837795914268:android:c808cfc5c5eac9a8b435d9",
+        "android_client_info": {
+          "package_name": "com.example"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7uNTzzFhcBaRf-cmuCe5BEgk0uZ--aZY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
