@@ -27,7 +27,6 @@ jobs:
       # Step 3: Install dependencies and build Flutter Web
       - name: Install dependencies and build Flutter Web
         run: |
-          flutter pub get       # Install dependencies
           flutter build web     # Build Flutter web
 
       # Step 4: Deploy to Firebase Hosting
